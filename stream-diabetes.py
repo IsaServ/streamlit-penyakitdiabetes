@@ -1,5 +1,7 @@
 import pickle
 import streamlit as st
+import os
+st.write("Files di folder:", os.listdir())
 
 # membaca model
 try:
