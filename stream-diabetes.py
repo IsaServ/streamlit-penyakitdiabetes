@@ -2,7 +2,10 @@ import pickle
 import streamlit as st
 
 # membaca model
-diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
+try:
+    diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
+except Exception as e:
+    st.error(f"Gagal load model: {e}")
 
 #judul web
 st.title('Data Mining Prediksi Diabetes')
